@@ -55,7 +55,7 @@ namespace Main1
 
         }
 
-        public void RemoveNode(ulong TagID)
+        public void RemoveNode(int TagID) // To Be Continued
         {
 
         }
