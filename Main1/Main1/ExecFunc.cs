@@ -10,6 +10,14 @@ namespace Main1
     class ExecFunc
     {
 
+
+
+
+
+
+
+
+        /*
         public static void ThreadProc()
         {
             for (int i = 0; i < 10; i++)
@@ -19,10 +27,16 @@ namespace Main1
                 Thread.Sleep(0);
             }
         }
+        */
+
+
+
+
+
 
         static void Main()
         {
-
+            /*
             Console.WriteLine("Main thread: Start a second thread.");
             // The constructor for the Thread class requires a ThreadStart 
             // delegate that represents the method to be executed on the 
@@ -43,12 +57,18 @@ namespace Main1
             t.Join();
             Console.WriteLine("Main thread: ThreadProc.Join has returned.  Press Enter to end program.");
             Console.ReadLine();
-        }
+            */
 
 
-    }
+
+
+
+        } // Close Main()
+
+
+    } // Close ExecFunc
 
     
 
 
-}
+} // Close NameSpace
