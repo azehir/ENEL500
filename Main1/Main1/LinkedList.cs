@@ -66,12 +66,13 @@ namespace Main1
             Node NodeCurrent = NodeHead;
             Node NodePrev = NodeHead;
 
-            while(NodeCurrent.GetID() != TagID && NodeCurrent.NodeNext != null)
+            while(NodeCurrent.NodeNext != null)
             {
                 if (NodeCurrent.GetID() == TagID)
                 {
                     NodePrev.NodeNext = NodeCurrent.NodeNext;
                     NodeCurrent.NodeNext = null;
+                    break;
                 }
                 else
                 {
