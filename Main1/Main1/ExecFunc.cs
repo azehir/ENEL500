@@ -4,30 +4,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Drawing;
 
 namespace Main1
 {
     class ExecFunc
     {
+        Image newImage = new Image.FromFile("Back View Transformer Schematic.png");
 
 
 
 
 
 
-
-
-        /*
-        public static void ThreadProc()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("ThreadProc: {0}", i);
-                // Yield the rest of the time slice.
-                Thread.Sleep(0);
-            }
-        }
-        */
+        
+        //public static void ThreadProc()
+        //{
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Console.WriteLine("ThreadProc: {0}", i);
+        //        // Yield the rest of the time slice.
+        //        Thread.Sleep(0);
+        //    }
+        //}
+        
 
 
 
@@ -36,28 +36,28 @@ namespace Main1
 
         static void Main()
         {
-            /*
-            Console.WriteLine("Main thread: Start a second thread.");
-            // The constructor for the Thread class requires a ThreadStart 
-            // delegate that represents the method to be executed on the 
-            // thread.  C# simplifies the creation of this delegate.
-            Thread t = new Thread(new ThreadStart(ThreadProc));
 
-            // Start ThreadProc
-            t.Start();
-            //Thread.Sleep(1);
+            //Console.WriteLine("Main thread: Start a second thread.");
+            //// The constructor for the Thread class requires a ThreadStart 
+            //// delegate that represents the method to be executed on the 
+            //// thread.  C# simplifies the creation of this delegate.
+            //Thread t = new Thread(new ThreadStart(ThreadProc));
 
-            for (int i = 0; i < 4; i++)
-            {
-                Console.WriteLine("Main thread: Do some work.");
-                Thread.Sleep(0);
-            }
+            //// Start ThreadProc
+            //t.Start();
+            ////Thread.Sleep(1);
 
-            Console.WriteLine("Main thread: Call Join(), to wait until ThreadProc ends.");
-            t.Join();
-            Console.WriteLine("Main thread: ThreadProc.Join has returned.  Press Enter to end program.");
-            Console.ReadLine();
-            */
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Console.WriteLine("Main thread: Do some work.");
+            //    Thread.Sleep(0);
+            //}
+
+            //Console.WriteLine("Main thread: Call Join(), to wait until ThreadProc ends.");
+            //t.Join();
+            //Console.WriteLine("Main thread: ThreadProc.Join has returned.  Press Enter to end program.");
+            //Console.ReadLine();
+
 
 
 
