@@ -102,6 +102,7 @@ namespace Main1
                 if (Current.GetID() == TagID)
                 {
                     Current.SetTemp(TempData);
+                    return;
                 }
             }
 
@@ -126,6 +127,7 @@ namespace Main1
                 {
                     Current.SetXCoord(xCoord);
                     Current.SetYCoord(yCoord);
+                    return;
                 }
             }
 
@@ -163,6 +165,8 @@ namespace Main1
 
                 NodeCurrent = NodeCurrent.NodeNext;
             }
+
+            return;
         }
 
 
