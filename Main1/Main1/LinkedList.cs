@@ -100,7 +100,7 @@ namespace Main1
         public void EditTag_Node(int OldTagID, int NewTagID)
         {
 
-            if(OldTagID == null || NewTagID == null)
+            if(OldTagID == 0 || NewTagID == 0)
                 {
                 Console.WriteLine("Argument \"OldTagID\" or \"NewTagID\" to Method EditTag_Node is Null "); 
                 }
