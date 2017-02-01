@@ -66,12 +66,13 @@ namespace Main1
             Node NodeCurrent = NodeHead;
             Node NodePrev = NodeHead;
 
-            while(NodeCurrent.GetID() != TagID && NodeCurrent.NodeNext != null)
+            while(NodeCurrent.NodeNext != null)
             {
                 if (NodeCurrent.GetID() == TagID)
                 {
                     NodePrev.NodeNext = NodeCurrent.NodeNext;
                     NodeCurrent.NodeNext = null;
+                    break;
                 }
                 else
                 {
@@ -87,9 +88,22 @@ namespace Main1
 
         }
 
-        public void EditTemp_Node(ulong TagID, ulong TempData)
+        public void EditTemp_Node(int TagID, ulong TempData)
         {
+            if (TagID == 0)
+            {
+                Console.WriteLine("Argument \"TagID\" to Method EditTemp_Node is Null ");
+            }
+            Node Current = NodeHead;
 
+            while (Current.NodeNext != null)
+            {
+                if (Current.GetID() == TagID)
+                {
+                    Current.SetTemp(TempData);
+                }
+                Current = Current.NodeNext;
+            }
         }
 
         public void EditXYCoords_Node(int xCoord, int yCoord)
