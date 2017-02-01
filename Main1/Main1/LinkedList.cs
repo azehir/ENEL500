@@ -57,23 +57,28 @@ namespace Main1
 
         public void RemoveNode(int TagID) // To Be Continued
         {
-
             if(TagID == 0)
                 {
-                Console.WriteLine("Tag ID to be Deleted is Null");
-                return;
+                    Console.WriteLine("Tag ID to be Deleted is Null");
+                    return;
                 }
 
             Node NodeCurrent = NodeHead;
+            Node NodePrev = NodeHead;
 
             while(NodeCurrent.GetID() != TagID && NodeCurrent.NodeNext != null)
             {
-                if(NodeCurrent.GetID() == TagID)
+                if (NodeCurrent.GetID() == TagID)
                 {
-                    NodeCurrent.dispose();
+                    NodePrev.NodeNext = NodeCurrent.NodeNext;
+                    NodeCurrent.NodeNext = null;
                 }
-
-                NodeCurrent = NodeCurrent.NodeNext;
+                else
+                {
+                    NodePrev = NodePrev.NodeNext;
+                    NodeCurrent = NodeCurrent.NodeNext;
+                    
+                }
 
             }
 
