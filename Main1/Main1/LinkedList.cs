@@ -97,8 +97,23 @@ namespace Main1
 
         }
 
-        public void EditTag_Node(ulong TagID)
+        public void EditTag_Node(int OldTagID, int NewTagID)
         {
+
+            if(OldTagID == null || NewTagID == null)
+                {
+                Console.WriteLine("Argument \"OldTagID\" or \"NewTagID\" to Method EditTag_Node is Null "); 
+                }
+            Node Current = NodeHead;
+
+            while(Current.NodeNext != null)
+            {
+                if(Current.GetID() == OldTagID)
+                {
+                    Current.SetID(NewTagID);
+                }
+            }
+
 
         }
 
