@@ -87,13 +87,47 @@ namespace Main1
 
         }
 
-        public void EditTemp_Node(ulong TagID, ulong TempData)
+        public void EditTemp_Node(int TagID, ulong TempData)
         {
+
+            if (TagID == 0 || TempData == 0)
+            {
+                Console.WriteLine("Argument \"TempData\" or \"TagID\" to Method EditTag_Node is Null ");
+            }
+            Node Current = NodeHead;
+
+            while (Current.NodeNext != null)
+            {
+                if (Current.GetID() == TagID)
+                {
+                    Current.SetTemp(TempData);
+                }
+            }
+
+
+
 
         }
 
-        public void EditXYCoords_Node(int xCoord, int yCoord)
+        public void EditXYCoords_Node(int TagID, uint xCoord, uint yCoord)
         {
+
+            if (xCoord == 0 || yCoord == 0)
+            {
+                Console.WriteLine("Argument \"xCoord\" or \"yCoord\" to Method EditXYCoords_Node is Null ");
+            }
+
+            Node Current = NodeHead;
+
+            while (Current.NodeNext != null)
+            {
+                if (Current.GetID() == TagID)
+                {
+                    Current.SetXCoord(xCoord);
+                    Current.SetYCoord(yCoord);
+                }
+            }
+
 
         }
 
@@ -204,14 +238,32 @@ namespace Main1
                 this.u32LocTag = NewLoc;
             }
 
+            public void SetXCoord(uint Xin)
+            {
+                if (Xin == 0)
+                {
+                    Console.WriteLine("New XLocation being added to ID: {0} is Zero", this.GetID());
+                }
+                this.u16xCoord = Xin;
+            }
 
-//----------- END  SET FUNCTIONS ---------------
+            public void SetYCoord(uint Yin)
+            {
+                if (Yin == 0)
+                {
+                    Console.WriteLine("New YLocation being added to ID: {0} is Zero", this.GetID());
+                }
+                this.u16xCoord = Yin;
+            }
+
+
+            //----------- END  SET FUNCTIONS ---------------
 
 
 
 
 
-//----------- GET FUNCTIONS ---------------
+            //----------- GET FUNCTIONS ---------------
             public ulong GetTemp()
             {
                 return this.u32TempData;
@@ -227,7 +279,18 @@ namespace Main1
                 return this.u16TagID;
             }
 
-//----------- END GET FUNCTIONS ---------------
+            public uint GeXCoord()
+            {
+                return this.u16xCoord;
+                
+            }
+
+            public uint GetYCoord()
+            {
+                return this.u16yCoord;
+
+            }
+            //----------- END GET FUNCTIONS ---------------
 
 
         } // Close Class Node
