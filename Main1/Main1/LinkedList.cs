@@ -58,6 +58,28 @@ namespace Main1
         public void RemoveNode(int TagID) // To Be Continued
         {
 
+            if(TagID == 0)
+                {
+                Console.WriteLine("Tag ID to be Deleted is Null");
+                return;
+                }
+
+            Node NodeCurrent = NodeHead;
+
+            while(NodeCurrent.GetID() != TagID && NodeCurrent.NodeNext != null)
+            {
+                if(NodeCurrent.GetID() == TagID)
+                {
+                    NodeCurrent.dispose();
+                }
+
+                NodeCurrent = NodeCurrent.NodeNext;
+
+            }
+
+
+            
+
         }
 
         public void EditTemp_Node(ulong TagID, ulong TempData)
