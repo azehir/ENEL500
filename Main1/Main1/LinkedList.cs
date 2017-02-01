@@ -81,11 +81,7 @@ namespace Main1
                     
                 }
 
-            }
-
-
-            
-
+            } 
         }
 
         public void EditTemp_Node(int TagID, ulong TempData)
