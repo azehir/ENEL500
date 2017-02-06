@@ -81,12 +81,16 @@ namespace Main1
                     
                 }
 
-            }
-
-
-            
-
+            } 
         }
+
+        public void EditTemp_Node(int TagID, ulong TempData)
+        {
+            if (TagID == 0)
+            {
+                Console.WriteLine("Argument \"TagID\" to Method EditTemp_Node is Null ");
+            }
+            Node Current = NodeHead;
 
         public void EditTemp_Node(int TagID, ulong TempData)
         {
@@ -102,7 +106,6 @@ namespace Main1
                 if (Current.GetID() == TagID)
                 {
                     Current.SetTemp(TempData);
-                    return;
                 }
             }
 
@@ -127,7 +130,6 @@ namespace Main1
                 {
                     Current.SetXCoord(xCoord);
                     Current.SetYCoord(yCoord);
-                    return;
                 }
             }
 
@@ -165,8 +167,6 @@ namespace Main1
 
                 NodeCurrent = NodeCurrent.NodeNext;
             }
-
-            return;
         }
 
 
