@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BluetoothComms.cs" />
     <Compile Include="ImgProc.cs" />
     <Compile Include="LinkedList.cs" />
     <Compile Include="ExecFunc.cs" />
