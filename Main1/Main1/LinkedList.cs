@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 namespace Main1
 {
@@ -23,7 +24,6 @@ namespace Main1
             NodeToAdd.SetTemp(TempData);
             NodeHead = NodeToAdd;
         }
-
 
         public void AddNodeToBack(int TagID,
                                   ulong LocTag,
@@ -161,6 +161,31 @@ namespace Main1
                 NodeCurrent = NodeCurrent.NodeNext;
                 break;
             }
+        }
+
+        public void UpdateList(string sFilePath)
+        {
+            if(!File.Exists(sFilePath))
+            {
+                var fs = File.OpenRead(sFilePath);
+                var reader = new StreamReader(fs);
+                {
+                    ulong u32TempData;
+                    uint   u16TagId;
+                    string sTagID;
+                    string sTempData;
+
+                    while(!reader.EndOfStream)
+                    {
+                        var line = reader.ReadLine();
+                        
+
+                    }
+
+
+                }
+            }
+
         }
 
 
