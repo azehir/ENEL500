@@ -170,15 +170,19 @@ namespace Main1
                 var fs = File.OpenRead(sFilePath);
                 var reader = new StreamReader(fs);
                 {
-                    ulong u32TempData;
-                    uint   u16TagId;
+                    ulong u64TempData;
+                    uint   u32TagId;
                     string sTagID;
                     string sTempData;
 
                     while(!reader.EndOfStream)
                     {
-                        var line = reader.ReadLine();
-                        
+                        string line = reader.ReadLine();
+                        sTagID = line.Substring(line.IndexOf("Tag:") + 5, 16);
+                        sTempData = line.Substring(line.IndexOf("Temp:") + 6, 32);
+
+                        u64TempData = Convert.ToUInt64(sTempData);
+                        u32TagId = Convert.ToUInt32(sTagID);
 
                     }
 

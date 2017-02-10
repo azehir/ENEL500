@@ -19,8 +19,14 @@ namespace Main1
          *      
          *      
          *  Plot Temperature Data 
-         *      Grab data from LUT given location tag from the sensor
-         * 
+         *      Create blank image same size as schematic
+         *      Grab data from LUT given location tag from the sensor 
+         *      Grab Temp data from linked list 
+         *      Plot Temp Data at Given pixel location
+         *      Return New image with temp data plotted
+         *      
+         *  Overlay Images
+         *      Recieve two images 
          * 
          * 
          * 
