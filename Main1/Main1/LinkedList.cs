@@ -86,14 +86,6 @@ namespace Main1
 
         public void EditTemp_Node(int TagID, ulong TempData)
         {
-            if (TagID == 0)
-            {
-                Console.WriteLine("Argument \"TagID\" to Method EditTemp_Node is Null ");
-            }
-            Node Current = NodeHead;
-
-        public void EditTemp_Node(int TagID, ulong TempData)
-        {
 
             if (TagID == 0 || TempData == 0)
             {
