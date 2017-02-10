@@ -14,7 +14,7 @@ namespace Main1
         private Node NodeHead; // Empty node at the start
 
 
-        public void AddNodeToFront(int TagID,
+        public void AddNodeToFront(ushort TagID,
                                    ulong LocTag,
                                    ulong TempData)
         {
@@ -25,7 +25,7 @@ namespace Main1
             NodeHead = NodeToAdd;
         }
 
-        public void AddNodeToBack(int TagID,
+        public void AddNodeToBack(ushort TagID,
                                   ulong LocTag,
                                   ulong TempData)
         {
@@ -55,7 +55,7 @@ namespace Main1
 
         }
 
-        public void RemoveNode(int TagID) 
+        public void RemoveNode(ushort TagID) 
         {
             if(TagID == 0)
                 {
@@ -84,7 +84,7 @@ namespace Main1
             } 
         }
 
-        public void EditTemp_Node(int TagID, ulong TempData)
+        public void EditTemp_Node(ushort TagID, ulong TempData)
         {
 
             if (TagID == 0 || TempData == 0)
@@ -105,7 +105,7 @@ namespace Main1
             return;
         }
 
-        public void EditXYCoords_Node(int TagID, uint xCoord, uint yCoord)
+        public void EditXYCoords_Node(ushort TagID, uint xCoord, uint yCoord)
         {
 
             if (xCoord == 0 || yCoord == 0)
@@ -128,7 +128,7 @@ namespace Main1
             return;
         }
 
-        public void EditTag_Node(int OldTagID, int NewTagID)
+        public void EditTag_Node(ushort OldTagID, ushort NewTagID)
         {
 
             if(OldTagID == 0 || NewTagID == 0)
@@ -171,7 +171,7 @@ namespace Main1
                 var reader = new StreamReader(fs);
                 {
                     ulong u64TempData;
-                    uint   u32TagId;
+                    ushort u16TagId;
                     string sTagID;
                     string sTempData;
 
@@ -182,7 +182,34 @@ namespace Main1
                         sTempData = line.Substring(line.IndexOf("Temp:") + 6, 32);
 
                         u64TempData = Convert.ToUInt64(sTempData);
-                        u32TagId = Convert.ToUInt32(sTagID);
+                        u16TagId = Convert.ToUInt16(sTagID);
+
+
+                        bool Found = false;
+
+                        Node NodeCurrent = NodeHead.NodeNext;
+                        while(NodeCurrent != null)
+                        {
+                            if (NodeCurrent.GetID() == u16TagId)
+                            {
+                                if(NodeCurrent.GetTemp() != u64TempData)
+                                {
+                                    NodeCurrent.SetTemp(u64TempData);
+                                    Found = true;
+                                    break;
+                                }
+
+                                Found = true;
+                                break;
+                            }
+
+                            Found = false;
+                        } //endwhile
+
+                        if(Found == false)
+                        {
+                            this.AddNodeToFront(u16TagId, 0, u64TempData); // Pass nodes into our methods instead of data?
+                        }
 
                     }
 
@@ -199,7 +226,7 @@ namespace Main1
 //-----------VariableDeclaration---------------
 
             public Node NodeNext;
-            private int u16TagID;
+            private ushort u16TagID;
             private ulong u32LocTag;
             private ulong u32TempData;
             private uint u16xCoord;
@@ -223,7 +250,7 @@ namespace Main1
                 u16yCoord = 0;
             }
 
-            public Node(int TagID, ulong LocTag, ulong TempData) // Constructor with Location Tag and TempData
+            public Node(ushort TagID, ulong LocTag, ulong TempData) // Constructor with Location Tag and TempData
             {
                 NodeNext = null;
                 u32LocTag = LocTag;
@@ -240,7 +267,7 @@ namespace Main1
 
 
 //----------- SET FUNCTIONS ---------------
-            public void SetID(int NewID)
+            public void SetID(ushort NewID)
             {
                 if(NewID == 0)
                 {
@@ -302,7 +329,7 @@ namespace Main1
                 return this.u32LocTag;
             }
 
-            public int GetID()
+            public ushort GetID()
             {
                 return this.u16TagID;
             }
