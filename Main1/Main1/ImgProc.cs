@@ -12,7 +12,14 @@ namespace Main1
     class ImgProc
     {
         /*
-         * Load 
+         * Load Image and Convert to bitmap
+         *      Loads image from directory with given input name
+         *      Takes image with given name and converts image to bitmap 
+         *      Return bitmapped image
+         *      
+         *      
+         *  Plot Temperature Data 
+         *      Grab data from LUT given location tag from the sensor
          * 
          * 
          * 
