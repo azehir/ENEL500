@@ -45,17 +45,17 @@ namespace Main1
                 while(Current.NodeNext != null)
                 {
                     Current = Current.NodeNext;
-
                 }
 
                 Current.NodeNext = NodeToAdd;
             }
 
+            return;
 
 
         }
 
-        public void RemoveNode(int TagID) // To Be Continued
+        public void RemoveNode(int TagID) 
         {
             if(TagID == 0)
                 {
@@ -86,14 +86,6 @@ namespace Main1
 
         public void EditTemp_Node(int TagID, ulong TempData)
         {
-            if (TagID == 0)
-            {
-                Console.WriteLine("Argument \"TagID\" to Method EditTemp_Node is Null ");
-            }
-            Node Current = NodeHead;
-
-        public void EditTemp_Node(int TagID, ulong TempData)
-        {
 
             if (TagID == 0 || TempData == 0)
             {
@@ -106,12 +98,11 @@ namespace Main1
                 if (Current.GetID() == TagID)
                 {
                     Current.SetTemp(TempData);
+                    break;
                 }
             }
 
-
-
-
+            return;
         }
 
         public void EditXYCoords_Node(int TagID, uint xCoord, uint yCoord)
@@ -130,10 +121,11 @@ namespace Main1
                 {
                     Current.SetXCoord(xCoord);
                     Current.SetYCoord(yCoord);
+                    break;
                 }
             }
 
-
+            return;
         }
 
         public void EditTag_Node(int OldTagID, int NewTagID)
@@ -150,10 +142,11 @@ namespace Main1
                 if(Current.GetID() == OldTagID)
                 {
                     Current.SetID(NewTagID);
+                    break;
                 }
             }
 
-
+            return;
         }
 
         public void PrintAll_Nodes()
@@ -166,6 +159,7 @@ namespace Main1
                                     NodeCurrent.GetTemp());
 
                 NodeCurrent = NodeCurrent.NodeNext;
+                break;
             }
         }
 

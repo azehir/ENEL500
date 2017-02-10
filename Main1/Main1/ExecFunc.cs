@@ -13,13 +13,6 @@ namespace Main1
     class ExecFunc
     {
         
-
-
-
-
-
-
-        
         //public static void ThreadProc()
         //{
         //    for (int i = 0; i < 10; i++)
@@ -29,11 +22,6 @@ namespace Main1
         //        Thread.Sleep(0);
         //    }
         //}
-        
-
-
-
-
 
 
         static void Main()
@@ -46,6 +34,8 @@ namespace Main1
                 gr.DrawImage(src, new Rectangle(0, 0, bmp.Width, bmp.Height));
                 bmp.Save("c:/temp/result.png", ImageFormat.Png);
             }
+
+
             //Bitmap image1 = new Bitmap("C:/Users/Laptop/Source/Repos/ENEL500/Main1/Back View Transformer Schematic.png");
             //Bitmap image2 = new Bitmap("C:/Users/Laptop/Source/Repos/ENEL500/Main1/Side View Transformer Schematic.png");
             //var bmp = new Bitmap(image1.Width, image1.Height, PixelFormat.Format32bppPArgb);
