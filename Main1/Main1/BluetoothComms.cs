@@ -8,7 +8,7 @@ namespace Main1
 {
     class BluetoothComms
     {
-        / THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
 // ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
 // THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
 // PARTICULAR PURPOSE.
@@ -28,12 +28,12 @@ namespace Main1
 //      for command-line-examples and detailed explanation about all options.
 //
 
-# include <stdio.h>
-# include <initguid.h>
-# include <winsock2.h>
-# include <ws2bth.h>
-# include <strsafe.h>
-# include <intsafe.h>
+using <stdio.h>
+using <initguid.h>
+using <winsock2.h>
+using <ws2bth.h>
+using <strsafe.h>
+using <intsafe.h>
 
 
 // {B62C4E8D-62CC-404b-BBBF-BF3E3BBB1374}
