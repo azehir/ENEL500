@@ -188,23 +188,28 @@ namespace Main1
                         bool Found = false;
 
                         Node NodeCurrent = NodeHead.NodeNext;
-                        while(NodeCurrent != null)
+                        if (NodeCurrent != null)
                         {
-                            if (NodeCurrent.GetID() == u16TagId)
+                            while (NodeCurrent != null)
                             {
-                                if(NodeCurrent.GetTemp() != u64TempData)
+                                if (NodeCurrent.GetID() == u16TagId)
                                 {
-                                    NodeCurrent.SetTemp(u64TempData);
+                                    if (NodeCurrent.GetTemp() != u64TempData)
+                                    {
+                                        NodeCurrent.SetTemp(u64TempData);
+                                        Found = true;
+                                        break;
+                                    }
+
                                     Found = true;
                                     break;
                                 }
 
-                                Found = true;
-                                break;
-                            }
-
+                                Found = false;
+                            } //endwhile
+                        }
+                        else
                             Found = false;
-                        } //endwhile
 
                         if(Found == false)
                         {
@@ -219,6 +224,11 @@ namespace Main1
 
         }
 
+        public Node nodeHead
+        {
+            get { return NodeHead; }
+            set { NodeHead = value; }
+        }
 
         public class Node
         {

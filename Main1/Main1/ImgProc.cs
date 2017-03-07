@@ -89,8 +89,7 @@ namespace Main1
             bitmapBeforeProcessing = currentBitmap;
         }
 
-        //Continue more with Altan
-        //Use Draw.Line function in order to make Crosses for temp data
+
         public void Resize(int newWidth, int newHeight)
         {
             if (newWidth != 0 && newHeight != 0)
